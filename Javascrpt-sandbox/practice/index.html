@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>Creating and using an object method.</p>
+    
+    <p>A method is actually a function definition stored as a property value.</p>
+    
+    <p id="demo"></p>
+    
+
+    <script src="practice.js"></script>
+    <script>
+    var person = {
+      firstName: "John",
+      lastName : "Doe",
+      id: 5566,
+      language: "en",
+      fullName : function() {
+        return this.firstName + " " + this.lastName;
+      },
+
+      get langGet(){
+        return this.language;
+      },
+
+      
+      set langSet(lang){
+        this.language = lang;
+      }
+
+    };
+
+    var to_string = JSON.stringify(person);
+    var me = person.langSet = "Kiswahili";
+    document.getElementById("demo").innerHTML = me;
+    </script>
+    </body>
+</html>
